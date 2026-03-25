@@ -1,4 +1,4 @@
-
+import numpy as np
 from sklearn.linear_model import LinearRegression
 
 
@@ -19,19 +19,25 @@ model.fit(X, y)
 print(model.coef_)
 print(model.intercept_)
 
-# 5. 预测
-x_new = [[11]]
-y_pred = model.predict(x_new)
-print(y_pred)
+
+# 用方差和协方差验证数学求解公式
+x = np.array(X).reshape(-1)
+cov = np.cov(x, y)
+print(cov)
+
+beta1 = cov[0][1] / cov[0][0]
+# 斜率
+print(beta1)
+# 截距
+print(np.mean(y) - beta1 * np.mean(x))
 
 
-# 6. 画图
-import matplotlib.pyplot as plt
-import numpy as np
 
-x_line = np.arange(0, 15, 0.1).reshape(-1, 1)
-y_line = model.predict(x_line)
-plt.scatter(X, y, color='black')
-plt.plot(x_line, y_line, color='red')
-plt.scatter(x_new, y_pred, color='green')
-plt.show()
+
+
+
+model = LinearRegression(fit_intercept=False)
+model.fit(X, y)
+
+
+
