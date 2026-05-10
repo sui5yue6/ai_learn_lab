@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 from collections import OrderedDict # 有序字典
-from common.optimizer import *
+from deep_learning.code.common.optimizer import *
 
 # 定义目标函数：f(x, y) = 1/20 x^2 + y^2
 def f(x, y):

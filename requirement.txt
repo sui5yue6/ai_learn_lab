@@ -18,3 +18,7 @@ Successfully installed pandas-3.0.1 tzdata-2025.3
 pip install seaborn
 Successfully installed seaborn-0.13.2
 
+pip install jieba
+Successfully installed jieba-0.42.1
+
+pip install gensim
